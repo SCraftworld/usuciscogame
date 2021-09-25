@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CiscoG, developed by SCraftworld</title>
+		<link rel="stylesheet" type="text/css" href="main.css"></link>
+		<link rel="stylesheet" type="text/css" href="jquery.mCustomScrollbar.css"></link>
+		<!--script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script-->
+		<script type="text/javascript" src="jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="jquery.transform2d.min.js"></script>
+		<script type="text/javascript" src="jquery.mCustomScrollbar.concat.min.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+		<script type="text/javascript" src="Global/global.js"></script>
+	</head>
+	<body>
+		<div class="button" onclick="$('#gamewindow').show();startMission('learn2fly');" id="start-button">Start</div>
+		<table id="gamewindow">
+			<tr>
+				<td id="status-wrapper" rowspan="2">
+					<div id="status"></div>
+				</td>
+				<td id="field-wrapper">
+					<div id="field"></div>
+					<div id="load-screen"></div>
+					<div id="dialog">
+						<div id="dialog-top">
+							<div id="dialog-person"></div>
+							<div id="dialog-person-name"></div>
+							<span id="dialog-content"></span>
+						</div>
+						<div id="dialog-choices"></div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div id="ahead"></div>
+				</td>
+			</tr>
+		</table>
+		<div id="info" class="fullscreen">
+			<div id="info-tabs"><div class="info-tab" id="inventoryTab" onclick="showInfoView('inventory');">Инвентарь</div><div class="info-tab" id="logTab" onclick="showInfoView('log');">Журнал</div><div class="close-cross gold" style="float:right;" onclick="closeInfoView();"></div></div>
+			<div id="info-content"></div>
+		</div>
+		<div id="minigame" class="centerscreen"></div>
+		<div id="anticlick" class="fullscreen"/>
+	</body>
+</html>

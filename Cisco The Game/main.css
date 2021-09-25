@@ -1,0 +1,376 @@
+/*Общие стили, стили игрового окна*/
+* {
+	user-select: none;
+	-khtml-user-select: none;
+	-o-user-select: none;
+	-moz-user-select: -moz-none;
+	-webkit-user-select: none;
+}
+body {
+	border:0px;
+	color:White;
+	background-color:Black;
+	cursor:default;
+}
+#player {
+	position:absolute;
+	z-index:100;
+}
+#field {
+	position:relative;
+	overflow:hidden;
+}
+#minigame {
+	border:1px solid Black;
+	background-color:White;
+	position:absolute;
+	color:Black;
+}
+#anticlick {
+	position:absolute;
+	display:none;
+	background-color:Gray;
+	opacity:0.6;
+	z-index:100500;
+}
+#field-wrapper {
+	position:relative;
+}
+#status-wrapper {
+	vertical-align:top;
+	height:448px;
+}
+#status {
+	width:210px;
+	height:100%;
+	padding:5px;
+	overflow-x:hidden;
+	overflow-y:auto;
+	font-size:12px;
+}
+#ahead {
+	height:20px;
+	padding:5px;
+}
+#load-screen {
+	background-color:Black;
+	display:none;
+	cursor: wait;
+}
+#load-image-wrapper {
+	display: table-cell;
+	width:400px;
+	height:400px;
+	text-align: center;
+	vertical-align: middle;
+}
+#gamewindow {
+	position:relative;
+	margin:10px;
+	overflow:hidden;
+	border-collapse:separate;
+	border-spacing:10px;
+	display:none;
+}
+#gamewindow td {
+	color:White;
+	background-color:Black;
+	border:3px ridge Goldenrod;
+	border-spacing:0px;
+}
+#msgbox {
+	width:500px;
+	padding:10px;
+	z-index:100501;
+}
+#info {
+	color:White;
+	background-color:Black;
+}
+.main-cell {background-repeat:no-repeat;}
+.button {
+	padding:2px;
+	cursor:default;
+	display:inline-block;
+	color:White;
+	background-color:Black;
+	border:3px outset Goldenrod;
+}
+.button:hover {
+	background-color:#151515;
+	border-color:Gold;
+}
+.button:active {
+	border:3px inset Goldenrod;
+}
+.ahead-button {
+	color:White;
+	background-image:url(keyboardbutton.png);
+	width:20px;
+	height:20px;
+	display:inline-block;
+	text-align:center;
+	vertical-align:middle;
+	margin-top:-3px;
+}
+.status-entry {
+	color:Yellow;
+}
+
+/*Стили окна информации персонажа*/
+#info-tabs {
+	border-bottom:1px solid Gold;
+}
+.info-tab {
+	text-align: center;
+	vertical-align: middle;
+	display: inline-block;
+	color: DarkGoldenRod;
+	background-color:Black;
+	border: 1px solid DarkGoldenRod;
+	cursor: pointer;
+	width: 100px;
+	height: 20px;
+	margin-right: 8px;
+}
+.info-tab.active-tab {
+	color: White;
+	border: 1px solid Gold;
+	border-bottom: none;
+	height: 22px;
+	margin-bottom: -1px;
+	cursor: default;
+}
+.info-tab:not(.active-tab):hover {
+	border: 1px solid Gold;
+}
+
+/*Стили журнала*/
+.log-header {
+	cursor:pointer;
+	color:Gold;
+}
+.log-header.log-header-finished {
+	color:DarkGoldenRod;
+}
+.log-entry {
+	margin-left:30px;
+	margin-bottom:10px;
+}
+.log-arrow {
+	background-image:url(logarrow.png);
+	width:20px;
+	height:20px;
+	float:left;
+	margin-top:5px;
+	margin-right:12px;
+}
+
+/*Стили инвентаря*/
+#invPager {
+	text-align:center;
+	height:40px;
+	margin-top:20px;
+	position:absolute;
+	bottom:20px;
+	right:20px;
+	border:3px solid DarkGoldenRod;
+}
+.inv-pager-arrow {
+	width:20px;
+	height:20px;
+	margin:10px;
+	background-image:url(invarrow.png);
+	display:inline-block;
+}
+.inv-pager-arrow.inv-pager-right {
+	background-position:-20px 0px;
+	display:inline-block;
+}
+.inv-pager-arrow:hover {
+	background-position:0px -20px;
+}
+.inv-pager-arrow.inv-pager-right:hover {
+	background-position:-20px -20px;
+}
+.inv-pager-digit {
+	display:inline-block;
+	vertical-align:middle;
+	height:40px;
+	color:DarkGoldenRod;
+	font-size:25px;
+	margin-top:-20px;
+}
+.inv-item-img {
+	border: 5px inset DarkGoldenRod;
+	background-color: White;
+}
+.inv-item-descr {
+	padding-left: 8px;
+}
+
+/*Стили диалогов*/
+#dialog {
+	position:absolute;
+	left:0px;
+	top:0px;
+	z-index:500;
+	display:none;
+	padding:18px;
+	background-color:Black;
+}
+#dialog-person {
+	float:left;
+	margin-right:8px;
+	margin-bottom:3px;
+	height:100px;
+	width:100px;
+}
+#dialog-person-name {
+	font-size:22px;
+	color:Gold;
+	margin-bottom:17px;
+}
+#dialog-top {
+	overflow:hidden;
+}
+#dialog-content {
+	margin-bottom:10px;
+}
+#dialog-choices {
+	position:absolute;
+	bottom:12px;
+}
+.dialog-choice {
+	color:Gold;
+	text-decoration:underline;
+}
+.dialog-choice:hover {
+	color:White;
+	cursor:pointer;
+}
+
+/*Стили внутренних подокон*/
+.fullscreen {
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:200;
+	padding:10px;
+	display:none;
+	overflow:hidden;
+}
+.centerscreen {
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:200;
+	padding:10px;
+	display:none;
+	background-color:Black;
+	border:3px ridge Goldenrod;
+}
+.close-cross {
+	background-image:url(close-cross.png);
+	width:20px;
+	height:20px;
+}
+.close-cross.gold {
+	background-image:url(close-cross-gold.png);
+}
+.close-cross:hover {background-position:-20px 0px;}
+
+/*Индивидуальные стили миниигр*/
+#selectCross.highlited {margin:-5px;border:5px solid Yellow}
+#selectStraight.highlited {margin:-5px;border:5px solid Yellow}
+
+#ball-curses {
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:400px;
+	height:400px;
+	z-index:1000000;
+	display:none;
+}
+.ball-curse-empty {
+	position:absolute;
+	width:30px;
+	height:30px;
+}
+.ball-curse {
+	position:absolute;
+	width:30px;
+	height:30px;
+	background-image:url(ball-curse.png);
+	z-index:1000000;
+}
+
+.npc {
+	position:absolute;
+	z-index:50;
+}
+
+/*Стили игровых персонажей*/
+.sal {
+	background-image:url('sal.png');
+	background-position:0px 0px;
+}
+.sal.l {
+	background-position:-40px 0px;
+}
+.sal.r {
+	background-position:-80px 0px;
+}
+.sal.u {
+	background-position:-120px 0px;
+}
+
+/*Стили дверей, предметов, неигровых персонажей, портреты для диалогов*/
+.cavedoor {background-image:url(door.png)}
+.pipe {background-image:url(pipe.png)}
+.window0 {background-image:url(window0.png)}
+.outerwindow1 {background-image:url(outerwindow1.png)}
+.outerwindow2 {background-image:url(outerwindow2.png)}
+.outerwindow3 {background-image:url(outerwindow3.png)}
+.outerwindowtop {background-image:url(outerwindowtop.png)}
+.openwindow0 {background-image:url(openwindow0.png)}
+.item.compleft {background-image:url(deskl.png)}
+.item.compright {background-image:url(deskr.png)}
+.item.compdown {background-image:url(deskd.png)}
+.item.compup {background-image:url(desku.png)}
+.item.crossbox {background-image:url(crossbox.png)}
+.item.straightbox {background-image:url(straightbox.png)}
+.item.loop {background-image:url(loop.png)}
+.item.extinguisher {background-image:url(fireex.png)}
+.item.rack {background-image:url(rack.gif)}
+.item.rackfix {background-image:url(rackfix.png)}
+.item.cert {background-image:url(cert.png)}
+.item.as5800 {background-image:url(as5800.png)}
+.item.tree1 {background-image:url(tree1.png)}
+.item.tree2 {background-image:url(tree2.png)}
+.item.tree3 {background-image:url(tree3.png)}
+.item.teachdesk1 {background-image:url(teachdesk1.png)}
+.item.teachdesk2 {background-image:url(teachdesk2.png)}
+.item.whiteboard {background-image:url(whiteboard.png)}
+.item.woodinnerdoorl {background-image:url(woodinnerdoorl.png)}
+.item.woodinnerdoorr {background-image:url(woodinnerdoorr.png)}
+.item.openwoodinnerdoorl {background-image:url(openwoodinnerdoorl.png)}
+.item.openwoodinnerdoorr {background-image:url(openwoodinnerdoorr.png)}
+.item.deandesk0 {background-image:url(deandesk0.png)}
+.item.deandesk1 {background-image:url(deandesk1.png)}
+.item.deandesk2 {background-image:url(deandesk2.png)}
+.item.deanchair {background-image:url(deanchair.png)}
+.item.secretarydesk {background-image:url(secretarydesk.png)}
+.item.wooddeskl {background-image:url(wooddeskl.png)}
+.item.wooddeskr {background-image:url(wooddeskr.png)}
+.item.wooddesku {background-image:url(wooddesku.png)}
+.item.wooddeskd {background-image:url(wooddeskd.png)}
+.item.groupslogsshelf {background-image:url(groupslogsshelf.png)}
+.item.deanlocker {background-image:url(deanlocker.png)}
+.item.cornice-debris {background-image:url(cornice-debris.png)}
+.npc.littleWalker {background-image:url(littleWalkerd.png)}
+.npc.littleCar {background-image:url(littleCar.png)}
+#dialog-person.instructor {background-image:url(instructor-d.png)}
+#dialog-person.sadinstructor {background-image:url(sadinstructor-d.png)}
+#dialog-person.happyinstructor {background-image:url(happyinstructor-d.png)}
